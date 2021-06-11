@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import "../css/Home.css";
+import MenuHomePage from "./MenuHomePage";
 
 class Albums extends Component {
   state = {
@@ -11,7 +13,7 @@ class Albums extends Component {
   fetchData = async () => {
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/deezer/artist/2108/albums",
+        "https://striveschool-api.herokuapp.com/api/deezer/artist/2105/albums",
         {
           method: "GET",
           headers: {
@@ -23,19 +25,41 @@ class Albums extends Component {
       let fetchedAlbums = await response.json();
       this.setState({ albums: fetchedAlbums.data });
       console.log(this.state.albums[0].title);
-      /* .then((response) => response.json()) */
-      /* .then((fetchedAlbums) => {
-              populateAlbums(fetchedAlbums.data);
-            }) */
     } catch (err) {
       console.log(err);
     }
-
-    /*  .catch((error) => console.log(error)); */
   };
   render() {
     return (
-      <Container fluid id="albums">
+      <>
+        {<MenuHomePage />}
+        <section class="container" id="throwback">
+          <h2>#THROWBACKTHURSDAY</h2>
+          <div
+            className="
+          throwback-cards
+          row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6
+          g-4
+        "
+          >
+            {this.state.albums.slice(0, 12).map((album) => (
+              <div className="col p-0 mb-3">
+                <div class="card border-0 p-2 mx-1 h-100">
+                  <img
+                    src={album.cover_big}
+                    className="card-img-top"
+                    alt={album.title}
+                  />
+                  <div className="card-body text-center p-1">
+                    <p className="card-title fw-bold">{album.title}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      </>
+      /*  <Container fluid id="albums">
         <h2>Albums</h2>
         <Row>
           {this.state.albums.map((album) => (
@@ -52,7 +76,7 @@ class Albums extends Component {
             </Col>
           ))}
         </Row>
-      </Container>
+      </Container> */
     );
   }
 }

@@ -1,0 +1,158 @@
+.main-nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  transition: background-color 0.7s;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.main-nav .nav-show {
+  display: block;
+}
+@media screen and (min-width: 576px) {
+  .main-nav {
+    width: calc(100vw - 250px);
+    left: 250px;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  .main-nav.bg-on {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  .main-nav .nav-show {
+    display: none;
+  }
+}
+.main-nav.bg-on {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.main-nav .navbar-toggler {
+  padding: 0;
+  outline: none;
+  box-shadow: none;
+}
+.main-nav .navbar-toggler svg {
+  color: #999999;
+  background-color: #99999934;
+}
+.main-nav a {
+  color: #999999;
+}
+
+.main-nav a:hover {
+  color: rgb(180, 180, 180);
+}
+.main-nav a.active {
+  color: white;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .main-nav a.active::after {
+    content: "";
+    height: 2px;
+    width: 35px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    border: 1px solid rgb(116, 173, 29);
+  }
+}
+/* Throwback section */
+#throwback {
+  margin-top: 40px;
+}
+#throwback .card,
+#shows .card {
+  background-color: rgba(0, 0, 0, 0.123);
+  cursor: pointer;
+  transition: 0.75s;
+}
+#throwback .card:hover,
+#shows .card:hover {
+  transform: scale(1.05);
+}
+#throwback .card-title,
+#shows .card-title {
+  color: white;
+  font-size: 0.9em;
+}
+main {
+  overflow-y: scroll;
+  height: calc(100vh - 100px);
+  position: relative;
+  flex-grow: 1;
+  scroll-behavior: smooth;
+}
+section {
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+section > h2 {
+  color: white;
+  font-weight: 700;
+  margin: 1em 0 0.75em;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #999999;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+p {
+  margin: 0;
+}
+body {
+  height: 100vh;
+  background: rgb(37, 70, 109);
+  background: linear-gradient(
+    135deg,
+    rgba(37, 70, 109, 1) 46%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+aside {
+  flex: 0 0 250px;
+  display: none;
+  height: calc(100vh - 100px);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+@media screen and (min-width: 576px) {
+  aside {
+    display: block;
+  }
+}
+
+main {
+  overflow-y: scroll;
+  height: calc(100vh - 100px);
+  position: relative;
+  flex-grow: 1;
+  scroll-behavior: smooth;
+}
+section {
+  padding-top: 20px;
+  margin-bottom: 50px;
+}
+section > h2 {
+  color: white;
+  font-weight: 700;
+  margin: 1em 0 0.75em;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #999999;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+p {
+  margin: 0;
+}
