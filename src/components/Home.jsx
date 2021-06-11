@@ -8,12 +8,12 @@ class Albums extends Component {
     albums: [],
   };
   componentDidMount = () => {
-    this.fetchData();
+    this.fetchData("throwbackthursday");
   };
-  fetchData = async () => {
+  fetchData = async (query) => {
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/deezer/artist/2105/albums",
+        "https://striveschool-api.herokuapp.com/api/deezer/search?q=" + query,
         {
           method: "GET",
           headers: {
@@ -42,11 +42,11 @@ class Albums extends Component {
           g-4
         "
           >
-            {this.state.albums.slice(0, 12).map((album) => (
+            {this.state.albums.slice(12, 24).map((album) => (
               <div className="col p-0 mb-3">
                 <div class="card border-0 p-2 mx-1 h-100">
                   <img
-                    src={album.cover_big}
+                    src={album.artist.picture_big}
                     className="card-img-top"
                     alt={album.title}
                   />
@@ -58,6 +58,31 @@ class Albums extends Component {
             ))}
           </div>
         </section>
+        {/*  <section class="container mt-5" id="throwback">
+          <h2>#Classifiche</h2>
+          <div
+            className="
+          throwback-cards
+          row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-6
+          g-4
+        "
+          >
+            {this.state.albums.slice(12, 24).map((album) => (
+              <div className="col p-0 mb-3">
+                <div class="card border-0 p-2 mx-1 h-100">
+                  <img
+                    src={album.artist.picture_big}
+                    className="card-img-top"
+                    alt={album.title}
+                  />
+                  <div className="card-body text-center p-1">
+                    <p className="card-title fw-bold">{album.title}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section> */}
       </>
       /*  <Container fluid id="albums">
         <h2>Albums</h2>

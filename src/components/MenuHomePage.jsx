@@ -56,9 +56,11 @@ class MenuHomePage extends Component {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#search">
-                    SEARCH
-                  </a>
+                  <Link to="/artist">
+                    <a className="nav-link" href="#search">
+                      Artist
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </div>

@@ -12,7 +12,7 @@ export default class AlbumPage extends Component {
   fetchData = async () => {
     try {
       let response = await fetch(
-        "https://striveschool-api.herokuapp.com/api/deezer/album/75621062",
+        "https://striveschool-api.herokuapp.com/api/deezer/album/224093872",
         {
           method: "GET",
           headers: {
@@ -34,25 +34,30 @@ export default class AlbumPage extends Component {
         <div className="container">
           <div className="row text-white">
             <div className="col-md-12 col-lg-4 album-cover">
-              {/*  <img
-                src={}
+              <img
+                src={
+                  "https://cdns-images.dzcdn.net/images/cover/8580adca3a4848b56a001da2108f4b6b/250x250-000000-80-0-0.jpg"
+                }
                 className="img-fluid w-100"
                 alt=""
-              /> */}
-              <h3 className="mt-2">
-                Queen II (Deluxe Edition
-                <br />
-                2011 Remaster)
-              </h3>
-              <p className="">Queen</p>
-              <button
-                type="button"
-                className="btn rounded-pill my-3 px-5 text-light"
-                id="btn-play"
-              >
-                PLAY
-              </button>
-              <p>1974 . 16 SONGS</p>
+              />
+              {this.state.albums.slice(0, 1).map((album) => (
+                <>
+                  <h3 className="mt-2">
+                    {album.artist.name}
+                    <br />
+                  </h3>
+                  <p className="">{album.title}</p>
+                  <button
+                    type="button"
+                    className="btn rounded-pill my-3 px-5 text-light"
+                    id="btn-play"
+                  >
+                    PLAY
+                  </button>
+                  <p>1974 . 16 SONGS</p>{" "}
+                </>
+              ))}
 
               <i className="far fa-heart"></i>
 

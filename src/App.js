@@ -7,6 +7,7 @@ import SideNavbar from './components/SideNavbar';
 import MenuHomePage from './components/MenuHomePage';
 import Footer from './components/Footer';
 import AlbumPage from './components/AlbumPage';
+import Artist from './components/Artist';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             
              <Route exact path="/" component={Home} />
               <Route exact path="/album" component={AlbumPage} />
+              <Route exact path="/artist" component={Artist} />
      {/* <Home/> */}
          </Router>
     
