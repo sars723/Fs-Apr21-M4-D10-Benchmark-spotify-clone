@@ -17,7 +17,7 @@ function App() {
         
             
             {/* <Home/> */}
-            
+            {/* <SideNavbar/> */}
              <Route exact path="/" component={Home} />
               <Route exact path="/album" component={AlbumPage} />
               <Route exact path="/artist" component={Artist} />
